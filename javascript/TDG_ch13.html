@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript The Definitive Guide - Chapter 13</title>
+        <style>
+            #timestamp {
+                background:#CCC;
+                width:980px;
+                height:20px;
+                padding:20px;
+            }
+
+            .highlight {
+                color:#D00;
+                font-weight:bold;
+                background:#000;
+            }
+        </style>
+    </head>
+    <body>
+        <p>
+        这段代码来自《JavaScript The Definitive Guide》的第13章，主要讲述客户端的JS代码。
+        </p>
+        <div id="timestamp"></div>
+        <script>
+            var timestamp = document.getElementById("timestamp");
+            if (timestamp.firstChild == null) {
+                timestamp.appendChild(document.createTextNode(new Date().toString()));
+            }
+            timestamp.style.backgroundColor = "yellow";
+            timestamp.className = "highlight";
+
+            timestamp.onclick = function(){
+                this.innerHTML = new Date().toString();
+            }
+        </script>
+    </body>
+</html>
