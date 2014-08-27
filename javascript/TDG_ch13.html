@@ -16,6 +16,10 @@
                 font-weight:bold;
                 background:#000;
             }
+
+            /* CSS styles for this page */
+            .reveal * { display:none; } /* Children of class="reveal" are not shown */
+            .reveal *.handle { display:block; } /* Except for the class="handle" child */
         </style>
     </head>
     <body>
@@ -35,5 +39,30 @@
                 this.innerHTML = new Date().toString();
             }
         </script>
+
+        <h1>Onload Demo</h1>
+        <script>
+            window.onload = function(){
+                var elements = document.getElementsByClassName("reveal");
+                for ( var i = 0; i < elements.length; i++) {
+                    var elt = elements[i];
+                    var title = elt.getElementsByClassName("handle")[0];
+                    title.onclick = function(){
+                        if (elt.className == "reveal")
+                            elt.className = "revealed";
+                        else if (elt.className == "revealed")
+                            elt.className = "reveal";
+                    }
+                }
+            }
+        </script>
+        <div class="reveal">
+            <h2 class="handle">
+                Click Here to Reveal Hidden Text
+            </h2>
+            <p>
+            This paragraph is hidden. It appears when you click on the title.
+            </p>
+        </div>
     </body>
 </html>
