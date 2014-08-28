@@ -1,0 +1,93 @@
+<!-- 这是页面用来展示如何拖放元素，没有考虑兼容性 -->
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!-- 禁止缩放页面 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+        <title>Drag Drop Demo</title>
+        <style>
+            body {
+                margin:0px;
+                padding:0px;
+                background:#CCC;
+            }
+
+            #container {
+                width:100%;
+                height:600px;
+                background:#FFF;
+                margin:0 auto;
+                background:url(img/bg.jpg);
+            }
+
+            .item {
+                padding:40px 20px;
+                width:130px;
+                height:182px;
+                background:url(img/note.png);
+                position:absolute;
+                cursor:move;
+                font-size:14px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div class="item">第1条信息第1条信息第1条信息第1条信息第1条信息第1条信息</div>
+            <div class="item">第2条信息</div>
+            <div class="item">第3条信息</div>
+            <div class="item">第4条信息</div>
+            <div class="item">第5条信息</div>
+        </div>
+        <div id="output">
+        </div>
+
+        <script>
+            var drag;
+            var items = document.getElementsByClassName("item");
+            for (var i = 0; i < items.length; i++) {
+                var item = items[i];
+                var randLeft = Math.random() * (980-100) + "px";
+                item.style.left = randLeft;
+                item.style.top = Math.random() * (600-262) + "px";
+                console.log(randLeft, item.offsetLeft, item.offsetTop);
+                addAction(item);
+            }
+
+            function randomColor() {
+                return "#" + Math.floor(Math.random() * 0xFFFFFF).toString(16);
+            }
+
+
+            function addAction(item) {
+                item.addEventListener("mousedown", onItemDown);
+            }
+
+            function onItemDown(e) {
+                console.log("mouse down on item");
+                document.addEventListener("mousemove", onDocMove);
+                document.addEventListener("mouseup", onDocUp);
+
+                drag = e.target;
+                drag.diffX = e.clientX - drag.offsetLeft;
+                drag.diffY = e.clientY - drag.offsetTop;
+            }
+
+            function onDocMove(e) {
+                var output = document.getElementById("output");
+                output.innerHTML = "鼠标位置：(" + e.clientX + ", " + e.clientY + ")";
+                if (drag) {
+                    drag.style.left = (e.clientX - drag.diffX) + "px";
+                    drag.style.top = (e.clientY - drag.diffY) + "px";
+                }
+            }
+
+            function onDocUp(e) {
+                document.removeEventListener("mousemove", onDocMove);
+                document.removeEventListener("mouseup", onDocUp);
+                drag = null;
+            }
+        </script>
+    </body>
+</html>
