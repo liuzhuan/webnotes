@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Cross Site Scripting Demo</title>
+    </head>
+    <body>
+        <script>
+            var name = decodeURIComponent(window.location.search.substring(1)) || "";
+            document.write("Hello " + name);
+        </script>
+        <hr/>
+        <a href="TDG_ch13_crossSiteScripting.html?David">David</a>
+        <br/>
+        <a href="TDG_ch13_crossSiteScripting.html?%3Cscript%3Ealert('David')%3C/script%3E">David with tags</a>
+        <br/>
+        <a href="TDG_ch13_crossSiteScripting.html?name=%3Cscript src=evil.js%3E%3C/script%3E">David with evil js</a>
+    </body>
+</html>
