@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Cursor Style In CSS</title>
+        <style>
+            p {
+                background:#CCC;
+                width:200px;
+                padding:20px;
+                text-align:center;
+                margin:10px auto;
+            }
+            body {
+                text-align:center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Cursor Style CSS</h1>
+        <script>
+            var styles = ["auto", "crosshair", "default", "pointer", "move", "text", "wait", "help", "progress", "inherit"];
+            styles.forEach(function(style){
+                console.log(style);
+                var str = "<p style='cursor:"+style+"'>" + style + "</p>";
+                document.write(str);
+            });
+        </script>
+    </body>
+</html>
