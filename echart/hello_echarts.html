@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Hello Echarts</title>
+        <style>
+            div.wrapper {width:980px;margin:0 auto;}
+            h1 {text-align:center;}
+            p {float:right;}
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <h1>2011年度中国留学生人数与流向简报</h1>
+
+            <!-- 为ECharts准备一个具备大小的DOM -->
+            <div id="main" style="height:400px"></div>
+
+            <p>数据来源：<a href="http://wenku.baidu.com/view/f87241f2f61fb7360b4c65b9.html">百度文库</a></p>
+        </div>
+
+        <!-- ECharts单文件引入 -->
+        <script src="http://echarts.baidu.com/build/dist/echarts.js">
+        </script>
+
+        <script type="text/javascript">
+            // 路径配置
+            require.config({
+                paths:{echarts:'http://echarts.baidu.com/build/dist'}
+            });
+
+            require(
+                ['echarts', 'echarts/chart/bar'],
+                function(ec){
+                    var myChart = ec.init(document.getElementById('main'));
+
+                    var option = {
+                        tooltip:{show:true},
+                        legend:{data:['出国留学', "回国人员"]},
+
+                        xAxis:[{
+                            type:'category', 
+                            data:["国家公派", "单位公派", "自费留学"]
+                        }],
+
+                        yAxis:[{type:'value'}],
+
+                        series:[
+                            {
+                                "name":"出国留学", 
+                                "type":"bar", 
+                                "data":[1.28, 1.21, 31.48]
+                            },
+                            {
+                                "name":"回国人员",
+                                "type":"bar",
+                                "data":[0.93, 0.77, 16.92]
+                            }
+                        ]
+                    };
+    
+                    myChart.setOption(option);
+                }
+            );
+        </script>
+    </body>
+</html>
