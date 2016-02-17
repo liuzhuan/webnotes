@@ -50,6 +50,63 @@ ajax 请求建议在 `willMount` 方法内执行，可尽早减少二次渲染�
 
 Webpack 是一个模块加载打包工具，与 requirejs 模块加载工具，grunt/gulp 构建工具，不尽相同。
 
+根据 webpack 的设计理念，所有资源都是“模块”。webpack 内部通过 loader 实现了一套资源加载机制。资源配置文件样例如下：
+
+```javascript
+// webpack.config.js
+module.exports = {
+	entry: {
+		entry: './index.jsx'
+	},
+	output: {
+		path: __dirname,
+		filename: '[name].min.js'
+	},
+	module: {
+		loaders: [
+			{ test: /\.css$/, loader: 'style!css' },
+			{ test: /\.(jsx|js)?$/, loader: 'jsx?harmony', exclude: /node_modules/ },
+			{ test: /\.(png|jpg|jpeg)$/, loader: 'url-loader?limit=10240' } // why url-loader, does '-loader' is necessary?
+		]
+	}
+};
+```
+
+上面的配置文件中，loaders 数组的每个元素配置为一种模块资源的加载机制。 `test` 的正则为匹配文件规则，`loader` 的为匹配的加载器，多个处理器之间用 `!` 分隔，处理顺序从右向左。
+
+如 `style!css`，css 文件通过 css-loader（处理 css），再到 style-loader（inline 到 html）的加工处理。
+
+jsx 文件通过 jsx-loader 编译，`?` 开启加载参数，`harmony` 支持 *ES6* 的语法。
+
+图片资源通过 url-loader 加载器，配置参数 `limit`，控制少于 10KB 的图片将会 base64 化。
+
+## 组件一体输出
+
+```javascript
+// 加载组件自身 css
+require('./slider.css');
+// 加载组件依赖模块
+var Rect = require("react")
+var Clip = require('../ui/clipitem.jsx')
+// 加载图片资源
+var spinnerImg = require('./loading.png')
+var Slider = React.createClass({
+	getInitialState: function(){},
+	componentDidMount: function(){},
+	render: function(){
+		return (
+			<div>
+				<Clip data={this.props.imgs} />
+				<img className="loading" src={spinnerImg} />
+			</div>
+		);
+	}
+})
+module.exports = Slider
+```
+
+react-hotloader *热加载*的开发模式绝对是下一代前端开发必备。
+
 # Refereces
 
 * [We will be componentized](http://www.alloyteam.com/2015/11/we-will-be-componentized-web-long-text/)
