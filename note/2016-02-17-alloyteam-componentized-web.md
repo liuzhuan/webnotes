@@ -44,8 +44,7 @@
 
 ajax 请求建议在 `willMount` 方法内执行，可尽早减少二次渲染的时间。
 
-`willMount` 只会执行一次，适合 init
-`didMount` 也执行一次，适合**事件绑定**和**complete类**的逻辑
+`willMount` 只会执行一次，适合 init。`didMount` 也执行一次，适合**事件绑定**和**complete类**的逻辑
 
 # Webpack 资源组件化
 
