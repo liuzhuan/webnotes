@@ -43,7 +43,31 @@ The GEXF document consists of a `gexf` element and a variety of subelements: `gr
 
 The `meta` element contains additional information about the network. The `graph` element must be declared after the meta element.
 
+## Network Topology
 
+The network topology structure containing nodes and edges is called the `graph`. Graphs in GEXF are mixed, in other words, they can contain directed and undirected edges at the same time. If no direction is specified when an edge is declared, the default direction `defaultedgetype` is applied to the edge. 
+
+The three possible values for `defaultedgetype` are `directed`, `undirected` and `mutual`. Default value is undirected.
+
+The optional XML-attribute `mode` set the kind of network: `static` or `dynamic`.
+
+The `edges` element must be declared after the `nodes` element.
+
+### Declaring a Node
+
+Nodes in the graph are declared by the `node` element. Each node has an identifier, which must be unique within the entire document. The identifier of a node is defined by the XML-attribute `id`, which is a string. Each node must have a XML-attribute `label`, which is a string.
+
+```xml
+<node id="0" label="Hello world" />
+```
+
+### Declaring an Edge
+
+Each edge must define its two endpoints with the XML-Attributes `source` and `target`. The weight of the edge is set by the optional XML-attribute `weight` and is a float.
+
+```xml
+<edge id="0" source="0" target="1" type="directed" weight="2.4" />
+```
 
 ## References
 
