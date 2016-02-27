@@ -211,7 +211,134 @@ var vm = new Vue({
 })
 ```
 
+There are other hooks, for example `compiled`, `ready` and `destroyed`. Below is a diagram for the instance lifecycle.
+
+![Lifecycle Diagram](http://vuejs.org/images/lifecycle.png)
+
+## Filters
+
+Vue.js allows you to append optional 'filters' to the end of an expression, denoted by the "pipe" symbol:
+
+```js
+{{ message | capitalize }}
+```
+
+Here we are "piping" the value of the `message` expression through the built-in `capitalize` filter.
+
+Fiters can be chained: 
+
+```js
+{{ message | fiterA | filterB }}
+```
+
+Filters can also take arguments:
+
+```js
+{{ message | filterA 'arg1' arg2 }}
+```
+
+## Directives
+
+Directives are special attributes with the `v-` prefix. A directive's job is to reactively apply special behavior to the DOM when the value of its expression changes.
+
+### Arguments
+
+Some directives can take an "argument", denoted by a colon after the directive name. For example, the `v-bind` directive is used to reactively update an HTML attribute:
+
+```html
+<a v-bind:href="url"></a>
+```
+
+### Modifiers
+
+Modifiers are special postfixes denoted by a dot, which indicates that a directive should be bound in some special way. For example, the `literal` modifier tells the directive to interpret its attribute value as a literal string rather than an expression:
+
+```html
+<a v-bind:href.literal="/a/b/c"></a>
+```
+
+### Shorthands (`v-bind` and `v-on`)
+
+```html
+<!-- v-bind Shorthand -->
+<a v-bind:href="url"></a>
+<a :href="url"></a>
+
+<button v-bind:disabled="someDynamicCondition">Button</button>
+<button :disabled="someDynamicCondition">Button</button>
+
+<!-- v-on Shorthand -->
+<a v-on:click="doSomething"></a>
+<a @click="doSomething"></a>
+```
+
+## Computed Properties
+
+For any logic that requires more than one expression, you should use a **computed property**.
+
+```html
+<div id="app">
+	a={{a}}, b={{b}}
+</div>
+```
+
+```js
+var vm = new Vue({
+	el: "#app",
+	data: {
+		a: 1
+	},
+	computed: {
+		b: function(){
+			return this.a + 1;
+		}
+	}
+})
+```
+
+### Computed Setter
+
+Computed properties are by default getter-only, but you can also provide a setter when you need it.
+
+## Class and Style Bindings
+
+Vue.js provides special enhancements when `v-bind` is used for `class` and `style`. In addition to Strings, the expressions can also evaluate to Objects or Arrays.
+
+### Binding HTML Classes
+
+Object Syntax
+
+```html
+<div class="static" v-bind:class="{'class-a': isA, 'class-b': isB}"></div>
+```
+
+```js
+data: {
+	isA: true,
+	isB: false
+}
+```
+
+which will render: 
+
+```html
+<div class="static class-a"></div>
+```
+
+When you use a CSS property that requires vendor prefixes in `v-bind:style`, for example `transform`, Vue.js will automatically detect and add appropriate prefixes to the applied styles.
+
+## Conditional Rendering
+
+```js
+<h1 v-if="ok">Yes</h1>
+<h1 v-else>No</h1>
+```
+
 ## References
 
 * [Getting Started - vue.js](http://vuejs.org/guide/)
 * [Overview - vue.js](http://vuejs.org/guide/overview.html)
+* [Data Binding Syntax - vue.js](http://vuejs.org/guide/syntax.html)
+* [Computed Properties](http://vuejs.org/guide/computed.html)
+* [Class and Style Bindings](http://vuejs.org/guide/class-and-style.html)
+* [Conditional Rendering](http://vuejs.org/guide/conditional.html)
