@@ -1,0 +1,209 @@
+<!-- Original URL: http://bbs1.people.com.cn/support/lhwzl/index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>我有问题问总理——两会</title>
+<script src="mobileshow.js" type="text/javascript"></script>
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="stylesheet" href="animation.css" type="text/css">
+</head>
+<body>
+
+<div class="slideshow">
+
+	<!-- 全局控制部件 -->
+	<div class="globalPackage">
+	    <div class="sound s_off" style="display: none"></div>
+    	<div class="moveArr"></div>
+  	</div>
+  
+  	<!-- 自定义场景 begin -->
+  	<!-- 封面 -->
+	<div class="scenery page_cover_01">
+		<div class="bg"></div>
+    	<div class="logo_top"></div>
+    	<div class="title anItem"></div>
+    	<!-- 
+    		data-animationIn 和 data-animation 用于控制动画参数，
+    		包括动画类型，动画时长和动画延迟时间
+    		这一部分功能是在哪里实现的？
+    	-->
+    	<div class="pic01 anItem" data-animationIn="fadeInRight 0.8s 0"></div>
+		<div class="hd01 anItem" data-animationIn="fadeInLeft 1s 1s" align=""></div>
+    	<div class="hd02 anItem" data-animationIn="bounceIn 1s 3s" data-animation="wobble 1s 5s 1"></div>
+    	<div class="hd03 anItem" data-animationIn="fadeInLeft 1s 2s"></div>
+    	<div class="txt anItem" data-animationIn="fadeIn 1s 3.5s">
+      		<span class="shape01"></span>
+      		　　又到一年两会时，您有什么心里话想对总理说，您有什么建议想给总理提？百姓的关切就是总理的牵挂，每一条网友留言都牵动着总理的心。2016年是我国进入全面建成小康社会决胜阶段的开局之年。中共十八届五中全会明确了未来5年我国发展的方向。前景令人鼓舞、催人奋进，但幸福不会从天降，为强国建言责无旁贷！欢迎参与我有问题问总理，留下2016年心中最美好期待！
+    	</div>
+	</div>
+
+   <!-- 封底 -->
+	<div class="scenery page_end_01">
+		<div class="bg"></div>
+    	<div class="hd01 anItem"></div>
+    	<div class="arr_Qust">
+      		<a class="wzl_type" href="http://bbs1.people.com.cn/support/lhwzl/page03.html" title="" type="养老服务"><span><em>养老服务</em></span></a>
+		    <a class="wzl_type" href="http://bbs1.people.com.cn/support/lhwzl/page03.html" title="" type="精准扶贫"><span><em>精准扶贫</em></span></a>
+		    <a class="wzl_type" href="http://bbs1.people.com.cn/support/lhwzl/page03.html" title="" type="打虎拍蝇"><span><em>打虎拍蝇</em></span></a>
+		    <a class="wzl_type" href="http://bbs1.people.com.cn/support/lhwzl/page03.html" title="" type="节能减排"><span><em>节能减排</em></span></a>
+		    <a class="wzl_type" href="http://bbs1.people.com.cn/support/lhwzl/page03.html" title="" type="绿色经济"><span><em>绿色经济</em></span></a>
+		    <a class="wzl_type" href="http://bbs1.people.com.cn/support/lhwzl/page03.html" title="" type="创新创业"><span><em>创新创业</em></span></a>
+		    <a class="wzl_type" href="http://bbs1.people.com.cn/support/lhwzl/page03.html" title="" type="农业现代化"><span><em>农业<br/>现代化</em></span></a>
+		    <a class="wzl_type" href="http://bbs1.people.com.cn/support/lhwzl/page03.html" title="" type="互联网+"><span><em>互联网+</em></span></a>
+		    <a class="wzl_type" href="http://bbs1.people.com.cn/support/lhwzl/page03.html" title="" type="科技创新"><span><em>科技创新</em></span></a>
+		    <a class="wzl_type" href="http://bbs1.people.com.cn/support/lhwzl/page03.html" title="" type="全面小康"><span><em>全面小康</em></span></a>
+		    <a class="wzl_type" href="http://bbs1.people.com.cn/support/lhwzl/page03.html" title="" type="城镇化"><span><em>城镇化</em></span></a>
+		    <a class="wzl_type" href="http://bbs1.people.com.cn/support/lhwzl/page03.html" title="" type="其他"><span><em>其他</em></span></a>
+    	</div>
+	</div>
+
+  <!-- 自定义场景 end -->
+</div>
+
+<script>
+(function(){
+  if(document.addEventListener){
+    document.addEventListener('touchmove', function(e){
+      e.preventDefault();
+    }, false); 
+  }
+  
+  function Q(s, p){
+    return (p || document).querySelector(s);
+  };
+
+  //预载图片
+  var preload = [
+    'images/bg_cover.jpg',
+    'images/title_cover.png',
+    'images/pic01.png',
+    'images/hd_1.png',
+    'images/hd_3.png',
+    'images/hd_2.png'
+  ];
+  mobileshow.init('.slideshow', preload);
+  
+  // 进行手机适配
+  var viewWidth = document.body.clientWidth;
+  var isMobile = navigator.userAgent.match(/(?:Windows Phone|SymbianOS|Android|iPad|iPod|iPhone)/);
+  var isWX =  navigator.userAgent.indexOf('Messenger') !== -1;
+  isMobile = isMobile ? isMobile[0] : false;
+  if(isMobile){
+    var f = document.documentElement.clientWidth / 640 * 32;
+    
+    if(document.documentElement.clientWidth / document.documentElement.clientHeight > 0.6349){
+      //小屏幕手机单独定义CSS
+      f = document.documentElement.clientHeight / 1008 * 32;
+    }
+    document.documentElement.style['font-size'] = f + 'px';
+    document.body.style['max-width'] = '20rem';
+    document.body.style['width'] = viewWidth + 'px';
+    document.body.style['position'] = 'relative';
+  } else {
+    var f = document.documentElement.clientHeight / 504 * 16,
+    viewWidth = Math.round(document.documentElement.clientHeight / 504 * 320);
+    document.documentElement.style['font-size'] = f + 'px';
+    document.body.style['overflow'] = 'hidden';
+    document.body.style['max-width'] = '640px';
+    document.body.style['width'] = viewWidth + 'px';
+    document.body.style['position'] = 'relative';
+
+    var pb = document.createElement('div');
+    pb.className = 'pageBtn';
+    pb.style.left = viewWidth + 'px';
+    pb.innerHTML = '<a href="javascript:void(0)" id="preBtn">上一页</a><a href="javascript:void(0)" id="nextBtn">下一页</a>'
+    document.body.appendChild(pb);
+
+    Q('#preBtn').onclick = function(){
+      mobileshow.pre();
+      return false;
+    };
+
+    Q('#nextBtn').onclick = function(){
+      mobileshow.next();
+      return false;
+    }; 
+  };
+})();
+</script>
+
+<!-- handle winxin datas -->
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+  /*
+    http://58.68.146.12/weixin/JS.js?url=http://www.people.com.cn 
+    This API create peopleWXConfig object:
+
+    var peopleWXConfig = {
+      debug: false,
+      appId: 'wxe9121b636db7c039',
+      timestamp: '1457506870',
+      nonceStr: 'people',
+      signature: 'b261d5892596328361c34426c657155356e7a978',
+      jsApiList: []
+    };
+  */
+
+  var src = "http://58.68.146.12/weixin/JS.js?url=" + encodeURIComponent(location.href.split('#')[0]);
+  var left = unescape('%3c');
+  var right = unescape('%3E');
+  document.write(left + 'script src="' + src + '"' + right + left + '/script' + right);
+</script>
+
+<script>
+    var imgUrl = 'http://bbs1.people.com.cn/support/lhwzl/images/120.png';
+    var link =  'http://bbs1.people.com.cn/support/lhwzl/index.html';
+    var title = "我有问题问总理";
+    var desc = '您有什么心里话想对总理说？留下2016年心中最美好期待！';
+    peopleWXConfig.jsApiList = ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareWeibo'];
+    wx.config(peopleWXConfig);
+    wx.ready(function() {
+        wx.onMenuShareAppMessage({
+            title: title,
+            desc:desc,
+            link: link,
+            imgUrl:imgUrl
+        });
+        wx.onMenuShareTimeline({
+            title: desc,
+            link: link,
+            imgUrl:imgUrl
+        });
+        wx.onMenuShareQQ({
+            title: title,
+            desc:desc,
+            link: link,
+            imgUrl:imgUrl
+        });
+        wx.onMenuShareWeibo({
+            title: title,
+            desc:desc,
+            link: link,
+            imgUrl:imgUrl
+        });
+    });
+</script>
+
+<script>
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + "; " + expires+" ; path=/ ";
+}
+
+var x = document.getElementsByClassName("wzl_type");
+for(var i = 0; i < x.length; i++) {
+  var item = x.item(i);
+  item.addEventListener("touchstart", function(){
+  	setCookie("mobile_wzl_type", encodeURIComponent(this.type), 1);
+  });
+}
+</script>
+
+</body>
+</html>
