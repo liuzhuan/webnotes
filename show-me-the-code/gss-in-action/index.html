@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>GSS In Action</title>
+
+	<script src="js/gss.min.js"></script>
+	<!-- <link rel="stylesheet/gss" type="text/gss" href="styles.gss"> -->
+</head>
+<body>
+	<h1>Hello GSS</h1>
+	<div id="gss"></div>
+	<div id="cassowary"></div>
+	<script>
+		window.engine = new GSS(document);
+	</script>
+	<style>
+	#gss,
+	#cassowary {
+		border: 1px solid red;
+		height: 100px;
+	}
+	</style>
+	<style type="text/gss">
+		
+		#gss[width] == 200;
+		#cassowary[width] == 200;
+		#gss[width] + #cassowary[width] == 350;
+
+	</style>
+	<footer>
+		<a href="http://gridstylesheets.org/usage/client-side/">Client-side | GSS</a>
+	</footer>
+</body>
+</html>
