@@ -4,6 +4,9 @@
 
 * [Hello World!](#Hello World!)
 * [大小写不敏感](#大小写不敏感)
+* [变量](#Variables)
+* [数据类型](#Data Types)
+* [参考资料](#参考资料)
 
 ## Hello World!
 
@@ -115,6 +118,54 @@ function myTest(){
 ?>
 ```
 
+## Data Types
+
+PHP 支持如下数据类型：
+
+* String 字符串
+* Integer 整数
+* Float 浮点数
+* Boolean 布尔值
+* Array 数组
+* Object 对象
+* NULL 空数值
+* Resource 资源
+
+PHP 的整数范围是 `-2,147,483,648` 和 `2,147,483,647` 之间。有十进制、十六进制和八进制三种规格。
+
+在下面例子中，`var_dump()` 函数返回数据类型和数值：
+
+```php
+$x = 5985;
+var_dump($x); // 输出：int(5985)
+```
+
+数组可以在一个变量名中存储多个数值：
+
+```php
+$cars = array("Volvo", "BMW", "Toyota");
+var_dump($cars); // output: array(3) { [0]=> string(5) "Volvo" [1]=> string(3) "BMW" [2]=> string(6) "Toyota" }
+```
+
+对象可以包含数据，以及处理这些数据的方法。首先，要使用 `class` 关键词声明类型：
+
+```php
+class Car {
+  function Car() {
+    $this->model = "VW";
+  }
+}
+
+$herbie = new Car();
+
+echo $herbie->model;
+```
+
+如果在 PHP 7 中运行如下代码，可能会报错：`PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Car has a deprecated constructor in F:\wwwroot\test.php on line 2`。在 PHP 5+ 中，需要使用 [__construct()](http://php.net/manual/en/language.oop5.decon.php) 作为构造函数。这个细微改变，当类名改变时，不需要改变构造函数名称，让程序更健壮[1][1]。
+
 ## 参考资料
 
 * [PHP 5 介绍 | w3schools.com](http://www.w3schools.com/php/php_intro.asp)
+* [__construct() vs SameAsClassName() for constructor in PHP][1]
+
+[1]: http://stackoverflow.com/questions/217618/construct-vs-sameasclassname-for-constructor-in-php
