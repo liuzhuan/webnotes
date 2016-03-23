@@ -161,7 +161,123 @@ $herbie = new Car();
 echo $herbie->model;
 ```
 
-如果在 PHP 7 中运行如下代码，可能会报错：`PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Car has a deprecated constructor in F:\wwwroot\test.php on line 2`。在 PHP 5+ 中，需要使用 [__construct()](http://php.net/manual/en/language.oop5.decon.php) 作为构造函数。这个细微改变，当类名改变时，不需要改变构造函数名称，让程序更健壮[1][1]。
+如果在 PHP 7 中运行如下代码，可能会报错：`PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; Car has a deprecated constructor in F:\wwwroot\test.php on line 2`。在 PHP 5+ 中，需要使用 [__construct()](http://php.net/manual/en/language.oop5.decon.php) 作为构造函数。这个细微改变，当类名改变时，不需要改变构造函数名称，让程序更健壮。
+
+资源类型不是一种真正的数据类型，用来存储 PHP 之外数据和资源的引用，比如数据库访问调用。
+
+## String API
+
+```php
+echo strlen("Hello world!"); // 12
+
+// 统计单词个数
+echo str_word_count("Hello world!"); // 2
+
+echo strrev("Hello world!"); // !dlrow olleH
+
+// 查找字符串
+echo strpos("Hello world!", "world"); // 6
+
+// 替换字符串
+echo str_replace("world", "Dolly", "Hello world!"); // Hello Dolly!
+```
+
+## Constants
+
+常量一经声明，不能改变。常量名前不需要 $ 前缀。使用 define() 函数定义常量：
+
+```php
+// Syntax
+define(name, value, case-insensitive);
+
+define("GREETING", "Welcome to W3Schools.com!");
+echo GREETING;
+
+define("GREETING", "Welcome to W3Schools.com!", true)
+echo greeting;
+```
+
+## conditional statements
+
+下面的例子会输出 "Have a good day!"，如果当前的小时小于20：
+
+```php
+$t = date("H");
+
+if ($t < "20") {
+	echo "Have a good day!";
+}
+
+```
+
+复杂分支的条件语句，需要使用 `elseif` 和 `else` ：
+
+```php
+  $t = date("H");
+
+  if ($t < "10") {
+  	echo "Have a good morning!";
+  }	elseif ($t < "20") {
+  	echo "Have a good day!";
+  } else {
+  	echo "Have a good night!";
+  }
+```
+
+## loops
+
+while 循环
+
+```php
+  $x = 1;
+
+  while ($x <= 5) {
+  	echo "The number is: $x <br>";
+  	$x++;
+  }
+```
+
+for 循环
+
+```php
+  for ($x = 0; $x <= 10; $x++) {
+  	echo "The number is: $x <br>";
+  }
+```
+
+foreach 循环
+
+```php
+  $colors = array("red", "green", "blue", "yellow");
+  foreach ($colors as $value) {
+  	echo "$value <br>";
+  }
+```
+
+## array
+
+PHP 有三种类型数组：
+
+* 索引数组
+* 关联数组
+* 多维数组
+
+创建索引数组有两种方式：
+
+```php
+$cars = array("Volvo", "BMW", "Toyota");
+
+$cars[0] = "Volvo";
+$cars[1] = "BMW";
+$cars[2] = "Toyota";
+```
+
+获取数组长度
+
+```php
+$cars = array("Volvo", "BMW", "Toyota");
+echo count($cars);
+```
 
 ## 参考资料
 
