@@ -2,10 +2,10 @@
 
 ## 目录
 
-* [Hello World!](#Hello World!)
+* [Hello World!](#hello-world!)
 * [大小写不敏感](#大小写不敏感)
-* [变量](#Variables)
-* [数据类型](#Data Types)
+* [变量](#variables)
+* [数据类型](#data-types)
 * [参考资料](#参考资料)
 
 ## Hello World!
