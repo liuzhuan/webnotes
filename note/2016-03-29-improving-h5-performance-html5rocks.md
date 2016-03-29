@@ -16,6 +16,8 @@
 
 你需要做的就是让渲染引擎明白那些部分是可以硬件加速的。
 
+
+
 ## References
 
 * [Improving the Performance of your HTML5 App](http://www.html5rocks.com/en/tutorials/speed/html5/)
