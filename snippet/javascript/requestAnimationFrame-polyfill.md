@@ -1,4 +1,5 @@
 作者: Paul Irish
+
 日期: 2011年2月22日
 
 ```javascript
