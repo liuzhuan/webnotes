@@ -1,5 +1,9 @@
 # Bookmarks for JavaScript
 
+## Vuejs
+
+* [Transitions - vue.js](http://vuejs.org/guide/transitions.html)
+
 ## Podcast
 
 * [JavaScript Air](https://javascriptair.com/)
