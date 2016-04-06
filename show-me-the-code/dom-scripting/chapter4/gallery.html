@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Image Gallery</title>
+	<link rel="stylesheet" href="styles/layout.css">
+</head>
+<body>
+	<h1>Snapshots</h1>
+	<ul>
+		<li><a href="http://people.com.cn/NMediaFile/2016/0406/MAIN201604061335557333034708908.jpg" title="A fireworks display" onclick="showPic(this);return false;">Fireworks</a></li>
+		<li><a href="http://people.com.cn/NMediaFile/2016/0406/MAIN201604061335558819133288064.jpg" title="A cup of black coffee" onclick="showPic(this);return false;">Coffee</a></li>
+		<li><a href="http://people.com.cn/NMediaFile/2016/0406/MAIN201604061335556368391730369.jpg" title="A red, red rose" onclick="showPic(this);return false;">Rose</a></li>
+		<li><a href="http://people.com.cn/NMediaFile/2016/0405/MAIN201604051932527340213900389.jpg" title="The famous clock" onclick="showPic(this);return false;">Big Ben</a></li>
+	</ul>
+
+	<img id="placeholder" src="http://vignette3.wikia.nocookie.net/brothers/images/5/56/Placeholder.gif/revision/latest?cb=20100122000942" alt="my image gallery">
+	<p id="description">Choose an image.</p>
+
+	<script src="scripts/showPic.js"></script>
+</body>
+</html>
