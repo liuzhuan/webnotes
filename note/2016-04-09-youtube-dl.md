@@ -40,7 +40,49 @@ youtube-dl [OPTIONS] URL [URL...]
 ## 网络选项
 
 ```
---proxy URL			
+--proxy URL			使用指定的 HTTP/HTTPS 代理
+--socket-timeout SECONDS		指定放弃前等待时间，单位是秒
+--source-address IP			客户端绑定的IP地址（试验中）
+-4， --force-ipv4			所有连接使用 IPV4（试验中）
+-6, --force-ipv6			所有连接使用 IPV6（试验中）
+--cn-verification-proxy URL			针对一些中国网站，使用该代理来检测IP地址（试验中）
+```
+
+## 视频选择
+
+```
+--playlist-start NUMBER			播放列表的开始位置（默认是1）
+--playlist-end NUMBER			播放列表的结束位置（默认是 last）
+--playlist-items ITEM_SPEC			指定播放列表中需要下载的索引值，逗号隔开，
+									比如 "--playlist-items 1,2,5,8"
+									还能指定范围 "--playlist-items 1-3,7,10-13"
+--match-tile REGEX				只下载能够匹配标题的视频（正则表达式或者不分大小写的字符串）
+--reject-title REGEX			忽略匹配标题的视频
+--max-downloads NUMBER			最大下载文件数
+--min-filesize SIZE			最小文件体积（比如 50k 或 44.5m）
+--max-filesize SIZE			最大文件体积
+--date DATE					只下载这个时间上传的视频
+--datebefore DATE			只下载该日期之前上传的视频（含该日期）
+--dateafter DATE			只下载该日期之后上传的视频（含该日期）
+--min-views COUNT			指定视频最小浏览量
+--max-views COUNT			指定视频最大浏览量
+--match-filter FILTER			指定过滤器（试验中）
+--no-playlist			仅下载视频
+--yes-playlist			下载播放列表
+--age-limit YEARS			仅下载适合该年龄的视频
+--download-archive FILE			仅下载没有在归档文件中列出的视频。记录所有下载视频的ID。
+--include-ads			同时下载广告
+```
+
+## 下载选项
+
+```
+-r, --rate-limit LIMIT			最大下载速率，单位：字节每秒（比如： 50k, 4.2M）
+-R, --retries RETRIES			重连次数（默认是10），或者"infinite"
+--fragment-retries RETRIES			某个片段的重连次数
+--buffer-size SIZE			下载缓冲区大小（比如 1024 或 16k）（默认为 1024）
+--no-resize-buffer			禁止动态调整缓冲区大小
+--playlist-reverse			逆向下载播放列表
 ```
 
 ## 参考资料
