@@ -85,5 +85,28 @@ youtube-dl [OPTIONS] URL [URL...]
 --playlist-reverse			逆向下载播放列表
 ```
 
+## 视频格式选项
+
+```
+-f, --format FORMAT			视频格式代码
+--all-formats				下载所有可用的视频格式
+-F, --list-formats			列出所有可用的格式
+```
+
+## 使用方法
+
+首先用 `-F` 列出这个视频有哪些格式 & 分辨率组合可供下载
+
+```
+youtube-dl <video-url> -F
+```
+
+使用 `-f <format-code>` 下载指定的格式
+
+```
+youtube-dl <video-url> -f <format-code>
+```
+
 ## 参考资料
 * [youtube-dl --- github.com](https://github.com/rg3/youtube-dl/)
+* [用终端下载 Youtube 视频](http://ohmystack.com/articles/download-youtube-in-terminal/)
