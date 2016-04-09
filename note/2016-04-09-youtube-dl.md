@@ -110,3 +110,4 @@ youtube-dl <video-url> -f <format-code>
 ## 参考资料
 * [youtube-dl --- github.com](https://github.com/rg3/youtube-dl/)
 * [用终端下载 Youtube 视频](http://ohmystack.com/articles/download-youtube-in-terminal/)
+* [youtube-dl 支持的网站](http://rg3.github.io/youtube-dl/supportedsites.html)
