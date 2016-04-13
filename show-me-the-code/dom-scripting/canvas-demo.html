@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Canvas Demo</title>
+	<style>
+	body {
+		background-color: #669;
+	}
+	</style>
+</head>
+<body>
+	<canvas id="draw-in-me" width="120" height="40">
+		<p>Powered By HTML5</p>
+	</canvas>
+
+	<script>
+		function draw(){
+			var canvas = document.getElementById('draw-in-me')
+			if (canvas.getContext) {
+				var ctx = canvas.getContext('2d')
+				ctx.beginPath()
+				ctx.moveTo(120, 32)
+				ctx.bezierCurveTo(120, 36.4, 116.4, 40, 112, 40)
+				ctx.lineTo(8, 40)
+				ctx.closePath()
+				ctx.fill()
+				ctx.lineWidth = 2
+				ctx.strokeStyle = "rgb(255,255,255)"
+				ctx.stroke()
+			}
+		}
+
+		window.onload = draw;
+	</script>
+</body>
+</html>
