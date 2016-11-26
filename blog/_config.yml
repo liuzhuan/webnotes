@@ -71,3 +71,6 @@ deploy:
   type: git
   repository: https://github.com/liuzhuan/liuzhuan.github.io.git
   branch: master
+
+# Disqus
+disqus_shortname: liuzhuan
