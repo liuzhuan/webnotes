@@ -17,3 +17,11 @@ module.exports = hello;
 > 有志者事竟成
 
 这是一个链接 [网易公开课](http://open.163.com/) 
+
+Hexo 并不是那么容易就能更新的，需要执行以下步骤：
+
+```shell
+$ hexo clean
+$ hexo generate
+$ hexo deploy
+```
