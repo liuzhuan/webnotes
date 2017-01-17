@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<title>Integer Input Demo</title>
+	<style>
+		label {
+			background: #CCC;
+		}
+
+		input[type=text] {
+			border: 1px solid #ccc;
+		}
+
+		input[type=submit] {
+			color: white;
+			background: steelblue;
+		}
+	</style>
+</head>
+<body>
+	<h1>Integer Input Demo</h1>
+	<form action="">
+		<label for="amount">amount</label>
+		<input type="text" id="amount">
+		<input type="submit" value="submit">
+	</form>
+
+	<script>
+		function intInput(id) {
+			var item = document.querySelector(id);
+			item.onkeyup = forceInt;
+			item.onafterpaste = forceInt;
+
+			function forceInt() {
+				this.value = this.value.replace(/[^0-9]+/, '').replace(/^0+/, '');
+			}
+		}
+
+		intInput('#amount');
+	</script>
+</body>
+</html>
