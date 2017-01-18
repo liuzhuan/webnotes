@@ -30,7 +30,7 @@
 
 		.swiper-slide {
 			text-align: center;
-			font-size: 18px;
+			font-size: 60px;
 			background: #fff;
 			display: -webkit-box;
 			display: -ms-flexbox;
@@ -49,6 +49,10 @@
 		.swiper-slide:nth-child(1) {
 			color: black;
 		}
+
+		h1 {
+			font-size: 1.2em;
+		}
 	</style>
 	<title>CSS Color Names</title>
 </head>
@@ -58,29 +62,23 @@
 		<div class="swiper-wrapper">
 			<div class="swiper-slide">
 				<h1>CSS Color Names</h1>
-				
-				<!--
-				<p>
-					There are 16 color names predefined by W3C: Navy, Blue, Aqua, Teal, Olive, Green, Lime, Yellow, Orange, Red, Maroon, Fushia, Purple, Silver, Gray, Black.
-				</p>
-				-->
 			</div>
-			<div class="swiper-slide">Aqua</div>
-			<div class="swiper-slide">Navy</div>
-			<div class="swiper-slide">Blue</div>
-			<div class="swiper-slide">Teal</div>
-			<div class="swiper-slide">Olive</div>
-			<div class="swiper-slide">Green</div>
-			<div class="swiper-slide">Lime</div>
-			<div class="swiper-slide">Yellow</div>
-			<div class="swiper-slide">Orange</div>
-			<div class="swiper-slide">Red</div>
-			<div class="swiper-slide">Maroon</div>
-			<div class="swiper-slide">Fuchsia</div>
-			<div class="swiper-slide">Purple</div>
-			<div class="swiper-slide">Silver</div>
-			<div class="swiper-slide">Gray</div>
-			<div class="swiper-slide">Black</div>
+			<div class="swiper-slide">Aqua/浅绿</div>
+			<div class="swiper-slide">Navy/深蓝</div>
+			<div class="swiper-slide">Blue/蓝</div>
+			<div class="swiper-slide">Teal/青</div>
+			<div class="swiper-slide">Olive/茶青</div>
+			<div class="swiper-slide">Green/绿</div>
+			<div class="swiper-slide">Lime/黄绿</div>
+			<div class="swiper-slide">Yellow/黄</div>
+			<div class="swiper-slide">Orange/橙</div>
+			<div class="swiper-slide">Red/红</div>
+			<div class="swiper-slide">Maroon/褐红</div>
+			<div class="swiper-slide">Fuchsia/紫红</div>
+			<div class="swiper-slide">Purple/紫</div>
+			<div class="swiper-slide">Silver/银</div>
+			<div class="swiper-slide">Gray/灰</div>
+			<div class="swiper-slide">Black/黑</div>
 		</div>
 		 
 		<div class="swiper-pagination"></div>
@@ -88,19 +86,25 @@
 
 	<script src="http://cdn.bootcss.com/Swiper/3.4.1/js/swiper.min.js"></script>
 	<script>
+		var blackItems = [
+			'white',
+			'yellow',
+			'lime'
+		];
+
 		var slides = document.querySelectorAll('.swiper-slide');
 		slides.forEach(function(item, idx){
-			console.log(item.textContent);
-			var colorName = item.textContent.trim().toLowerCase();
-			item.style.backgroundColor = item.textContent;
-			if (colorName == 'white' || colorName == 'yellow' || colorName == 'lime') {
+			var colorName = item.textContent.split('/')[0].trim().toLowerCase();
+			item.style.backgroundColor = colorName;
+			if (blackItems.indexOf(colorName) != -1) {
 				item.style.color = 'black';
 			}
 		});
 		// source code from http://idangero.us/swiper/demos/02-responsive.html
 		var swiper = new Swiper('.swiper-container', {
 			pagination: '.swiper-pagination',
-			paginationClickable: true
+			paginationClickable: true,
+			direction: 'vertical'
 		});
 	</script>
 </body>
