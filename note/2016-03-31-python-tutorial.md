@@ -2,8 +2,14 @@
 
 ## list & tuple
 
-```
+```python
 classmates = ['Michael', 'Bob', 'Tracy']
+classmates[-1] # 获取最后的元素
+len(classmates)
+classmates.append('Adam')
+classmates.insert(1, "Jack")
+classmates.pop() # 删除末尾元素
+classmates.pop(i) # 删除指定位置元素
 ```
 
 ## 参考资料
