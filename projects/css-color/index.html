@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="http://cdn.bootcss.com/Swiper/3.4.1/css/swiper.min.css">
+	<style>
+		html,
+		body {
+			position: relative;
+			height: 100%;
+		}
+
+		body {
+			background: #eee;
+			font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+			font-size: 14px;
+			color: white;
+			margin: 0;
+			padding: 0;
+		}
+
+		.swiper-container { 
+			width: 100%;
+			height: 100%;
+		}
+
+		.swiper-slide {
+			text-align: center;
+			font-size: 60px;
+			background: #fff;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: -webkit-flex;
+			display: flex;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
+			-webkit-justify-content: center;
+			justify-content: center;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			-webkit-align-items: center;
+			align-items: center;
+		}
+
+		.swiper-slide:nth-child(1) {
+			color: black;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}
+	</style>
+	<title>CSS Color Names</title>
+</head>
+<body>
+
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<h1>CSS Color Names</h1>
+			</div>
+			<div class="swiper-slide">Aqua/浅绿</div>
+			<div class="swiper-slide">Navy/深蓝</div>
+			<div class="swiper-slide">Blue/蓝</div>
+			<div class="swiper-slide">Teal/青</div>
+			<div class="swiper-slide">Olive/茶青</div>
+			<div class="swiper-slide">Green/绿</div>
+			<div class="swiper-slide">Lime/黄绿</div>
+			<div class="swiper-slide">Yellow/黄</div>
+			<div class="swiper-slide">Orange/橙</div>
+			<div class="swiper-slide">Red/红</div>
+			<div class="swiper-slide">Maroon/褐红</div>
+			<div class="swiper-slide">Fuchsia/紫红</div>
+			<div class="swiper-slide">Purple/紫</div>
+			<div class="swiper-slide">Silver/银</div>
+			<div class="swiper-slide">Gray/灰</div>
+			<div class="swiper-slide">Black/黑</div>
+		</div>
+		 
+		<div class="swiper-pagination"></div>
+	</div>
+
+	<script src="http://cdn.bootcss.com/Swiper/3.4.1/js/swiper.min.js"></script>
+	<script>
+		var blackItems = [
+			'white',
+			'yellow',
+			'lime'
+		];
+
+		var slides = document.querySelectorAll('.swiper-slide');
+		slides.forEach(function(item, idx){
+			var colorName = item.textContent.split('/')[0].trim().toLowerCase();
+			item.style.backgroundColor = colorName;
+			if (blackItems.indexOf(colorName) != -1) {
+				item.style.color = 'black';
+			}
+		});
+		// source code from http://idangero.us/swiper/demos/02-responsive.html
+		var swiper = new Swiper('.swiper-container', {
+			pagination: '.swiper-pagination',
+			paginationClickable: true,
+			direction: 'vertical'
+		});
+	</script>
+</body>
+</html>

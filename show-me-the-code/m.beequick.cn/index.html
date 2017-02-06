@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<html lang="en" class="platform-iphone platform-daojia58App platform-mobile platform-m bugfix ">
+    <head>
+        <meta charset="UTF-8">    
+        <script>
+            window.SYS_PERFORMANCE = {
+                pageName:'show_phone_m.tpl',
+                wxRedirectTime:'',
+                headStart:(new Date)*1
+            };
+        </script>  
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="format-detection" content="telephone=no">  
+        <link rel="apple-touch-icon-precomposed" href="/static/bee/img/app_icon-bae075e7.png"/>
+        <title>爱鲜蜂</title> 
+        <meta name="keywords" content="爱鲜蜂,社区O2O,网上外卖,订外卖"/>
+        <meta name="description" content="各种新鲜，闪电送！鲜蜂侠急送,1小时内送货上门,下单后鲜蜂侠火速送上冰饮零食、卤味夜宵~OTO领域的创新企业，专注于社区服务的最后1公里"/>  
+        <script>
+            window._bee_imgRequest = function(url,onfinish){
+                if(!url)return;
+                var imgId = '_img_request_'+Math.random(),
+                    loadFn = function(){
+                        delete window[imgId];
+                        onfinish && onfinish();
+                    };
+                window[imgId] = new Image();
+                window[imgId].onload = loadFn;
+                window[imgId].onerror = loadFn;
+                window[imgId].src = url;
+            };
+            
+            window._bee_sendError = (function(){
+                var msgSended = {};
+                return function(msg,url,line,column,errorObj){
+                    if(line != -1 && 'online' == 'online' && msgSended[msg])return;
+                    msgSended[msg] = true;
+                    window._bee_imgRequest('http://log.beequick.cn//err.gif?logid=5849e4361a6ed2462&msg='+encodeURIComponent(msg)+'&url='+encodeURIComponent(url)+'&line='+line+(column?'&column='+column:'')+(errorObj?'&errorObj='+encodeURIComponent(JSON.stringify(errorObj)):'')+'&_r='+Math.random());
+                }
+            })();
+            
+            window._bee_is_sentError=true;
+            window.onerror = function(msg,url,line){
+                if(url.indexOf('beequick.cn') == -1)return;
+                window._bee_is_sentError && _bee_sendError(msg,url,line);
+                window.vConsole && window.console.error('JsError:',msg,url,line);
+                /*Ignore Warning*/
+                return null;
+            };
+            window._bee_checkJsLoaded=function(){
+                if(!window._bee_jsLoaded)return;
+                var sElms=document.getElementsByTagName('script'),
+                    len=sElms.length,i,sElm,src,fname;
+                for(i=0;i<len;i++){
+                    sElm=sElms[i];
+                    src=sElm.src;
+                    if(!src||src.indexOf('/static/bee/')<0)continue;
+                    src=src.replace(/\-[0-9a-f]{8}\.js/,'.js');
+                    fname=src.split('/js/')[1];
+                    if(fname&&!window._bee_jsLoaded[fname]){
+                        window._bee_sendError('js load failed',sElm.src,-1);
+                        window._bee_jsLoaded[fname]=1;
+                    }
+                }
+            };
+            
+            if(window.addEventListener){
+                window.addEventListener('load',window._bee_checkJsLoaded,false);
+            }else if(window.attachEvent){
+                window.attachEvent('onload',window._bee_checkJsLoaded);
+            }
+        </script>    
+        <style>
+            html{position:relative;height:100%;margin:auto; }
+	        body{width:100%;height:100%;}
+	        @media screen and (-webkit-device-pixel-ratio: 1){ html{max-width:800px;} }
+	        @media screen and (-webkit-min-device-pixel-ratio: 2){ html{max-width:480px;} }
+        </style>    
+        <style>
+            body,div{padding:0;margin:0;}
+            html,body{
+                font: 16px/1.5 '微软雅黑',Helvetica,Tahoma,Arial,'华文细黑',sans-serif;
+                color: #333;
+                background-color:white;
+            }
+            @-webkit-keyframes kf_boot_gps{
+                0%,100%{opacity:.1;}
+                50%{opacity:1;}
+            }
+            .mod-bootstrap{
+                position:absolute;
+                top:0;
+                bottom:0;
+                left:0;
+                right:0;
+                background:center 30% no-repeat #ffd82b url(/static/bee/img/m/boot_logo-88fb0b99.png);
+                background-size:60%;
+            }
+            .mod-bootstrap .boot-gps{
+                padding-top:80%;
+                text-align:center;
+                font-size:14px !important;
+            }
+            .mod-bootstrap .boot-gps-icon{
+                width:36px;
+                height:36px;
+                margin:auto;
+                background:center center no-repeat url(/static/bee/img/m/boot_gps-5f778fd8.png);
+                background-size:contain;
+                -webkit-animation:kf_boot_gps 2s infinite;
+            }  
+        </style>    
+        <meta name="x5-fullscreen" content="true">
+        <meta name="full-screen" content="yes">  
+    </head>
+    <body class=" bugfix">  
+        <script>
+            window.SYS_PERFORMANCE.bodyStart=(new Date)*1;
+            if(navigator.standalone){
+                document.documentElement.className += ' standalone';
+            };
+        </script>   
+        <script>
+            (function(){
+			    var calc = function(){
+        		    var docElement = document.documentElement;
+        		    var clientWidthValue = docElement.clientWidth > 480 ? 480 : docElement.clientWidth;
+        		    docElement.style.fontSize = 10*(clientWidthValue/320) + 'px';
+			    }
+			    calc();
+			    window.addEventListener('resize',calc);
+		    })();
+        </script>  
+        <div id="mod-container" class="mod-container clearfix">         
+            <input type="hidden" id="m-phone-lazy-css" value="/static/bee/css/phone_m.all-1afe07d3.css"/> 
+            <input type="hidden" id="m-phone-img-css" value="/static/bee/css/phone_m_img.all-1dec3d2f.css"/>
+            <div id="mod-bootstrap" class="mod-bootstrap" style="display:block">
+                <div class="boot-gps">
+                    <div class="boot-gps-icon"></div>
+                    定位中
+                </div>
+            </div>
+            <ul id="mod-navs" class="mod-navs theme-spline-top" style="display:none"></ul>  
+        </div>  
+        
+        <script>
+            window.SYS_CONF = {
+                cacheMode:0,
+                environ:'online',
+                now:parseInt("1481237558000"),
+                jsNow:(new Date()).getTime(),
+                errno:0,
+                errmsg:"ok",
+                logid:"5849e4361a6ed2462",
+                geologid:"h5mb20161209065226L5849e42a200009360X0656835806628",
+                beeToken:"25ec5d9d3583cc0c9be3b387680eda0e",
+                tn:"",
+                tg:"",
+                appName:"bee",
+                isMobile:true,
+                isSimulateMobile: false,
+                lastAddrId:"",
+                userInfo: {
+                    "beeId": "5849e17e689668747", 
+                    "authorized":    ""    , 
+                    "logUid":    "5849e17e689668747"    
+                }    ,
+                domain:        {   
+                    "clicklog":    "http:\/\/log.beequick.cn\/"    , 
+                    "current":    "http:\/\/m.beequick.cn"    , 
+                    "static":    "http:\/\/www.beequick.cn"    
+                }    ,
+                platform:        {   
+                    "mobile":     true     , 
+                    "apple":     true     , 
+                    "ios70":    "0"    , 
+                    "m":     true     , 
+                    "pc":     false     , 
+                    "android":     false     , 
+                    "ipad":     false     , 
+                    "iphone":     true     , 
+                    "weibo":     false     , 
+                    "weixin":     false     , 
+                    "baiduapp":     false     , 
+                    "baidumap":     false     , 
+                    "bestpay":     false     , 
+                    "kuaiqian":     false     , 
+                    "nuomi":     false     , 
+                    "daojia58":     false     , 
+                    "daojia58App":     true     , 
+                    "dayima":     false     , 
+                    "mac":     false     , 
+                    "windows":     false     , 
+                    "app":     false     
+                }    ,
+                browser:        {   
+                    "oldIE":     false     , 
+                    "lteIE7":     false     , 
+                    "lteIE8":     false     , 
+                    "ie6":     false     , 
+                    "ie7":     false     , 
+                    "ie8":     false     , 
+                    "ie9":     false     
+                }    ,
+                appVersion:"",
+                promotion :         {   
+                    "shoppingCart":        {   
+                        "minPrice":    "30"    
+                    }      , 
+                    "minPrice":      []     , 
+                    "countLimit":        {   
+                        "109023":    "1"    , "98919":    "1"    , "94594":    "1"    , "97229":    "1"    , "97597":    "1"    , "104096":    "1"    , "109022":    "1"    , "104134":    "1"    , "104133":    "1"    , "104132":    "1"    , "107909":    "1"    , "107442":    "1"    , "107453":    "1"    , "107454":    "1"    , "107455":    "1"    , "107458":    "1"    , "108011":    "1"    , "108012":    "1"    , "109356":    "3"    , "109354":    "1"    , "107330":    "1"    
+                    }      , 
+                    "hidden":      []     , 
+                    "exclusion":        {   
+                        "brand":        [       "43,155"    ]      }      , "exclusive":      []     , "timestart":        {   "minPrice":        {   "time":    "201409220000"    , "timestamp":    "1411315200"    , "isStart":     true     }      , "wxFanxian":        {   "time":    "201502040000"    , "timestamp":    "1422979200"    , "isStart":     true     }      , "queen":        {   "time":    "201503070900"    , "timestamp":    "1425690000"    , "isStart":     true     }      , "queenBeforeEnd":        {   "time":    "201503180000"    , "timestamp":    "1426608000"    , "isStart":     true     }      }      , "welcome":        {   "text":    ""    , "from":    "201409220000"    }      , "welcomeLogo":        {   "active":     false     , "canShow":     false     }      }    ,shareSerie:'a70478dy2Or4C86tYLwg',protectedParams:'',sns:{userId:'',signedParam:    ""  ,weixinJsApiConf:    ""   },serverDectGps:false,frozenVersion:'',partner: ''}
+        </script>   
+        <script src="/static/bee/js/phone_base.all-66005697.js"></script>   
+        <script>  
+            try{
+                window.SYS_CONF.addrList =     ""  ;
+            }catch(e){}  
+        </script>
+        <script src="/static/bee/js/phone_m_min.all-9afacd97.js"></script>
+        <script id="m-phone-lazy-js" data-src="/static/bee/js/phone_m_lazy.all-c44e83bc.js"></script>        
+        <div class="bugfix-ui-node"></div>
+    </body>
+</html>

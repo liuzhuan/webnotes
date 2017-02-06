@@ -13,6 +13,12 @@
 
 * [Transitions - vue.js](http://vuejs.org/guide/transitions.html)
 
+## 地图开放接口
+
+* [高德地图开放平台 | 阿里巴巴集团旗下](http://lbs.amap.com/)
+	* [JavaScript API | 高德地图开放平台](http://lbs.amap.com/api/javascript-api/summary/)
+	* [控制台 | 高德地图开放平台](http://lbs.amap.com/dev/#/)
+
 ## Podcast
 
 * [JavaScript Air](https://javascriptair.com/)

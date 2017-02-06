@@ -1,0 +1,23 @@
+$font-stack: Helvetica;
+
+body {
+	background: steelblue;
+	font-family: $font-stack;
+}
+
+h1 {
+	color: white;
+}
+
+.output {
+	color: #FFF;
+	display:inline-block;
+	padding: 10px;
+	width: 10rem;
+	animation: moveRight 1s both infinite alternate;
+}
+
+@keyframes moveRight {
+	0% { transform: translate3d(0, 0, 0); }
+	100% { transform: translate3d(100px, 0, 0); }
+}

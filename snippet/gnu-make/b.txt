@@ -1,0 +1,2 @@
+b
+Let's do some change to b.txt.
