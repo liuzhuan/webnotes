@@ -4,5 +4,10 @@ SHELL := /bin/bash
 js_files = $(shell find ./lib -name '*.js')
 
 lint: $(js_files)
-    @echo $<
-    # jshint $?
+	jshint $?
+
+build/templates.js: templates/*.handlebars
+	mkdir -p $(dir $@)
+	handlebars $^ > $@
+
+template: build/templates.js
