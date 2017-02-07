@@ -1,0 +1,45 @@
+# Apache 服务器开启 https 访问
+
+> 经过测试，该方法在本地无法正常开启 https.
+
+## 1. 生成证书
+
+生成私钥文件
+
+```sh
+sudo openssl genrsa -aes256 -out service.key 1024
+```
+
+## 2. 生成证书并签署
+
+```sh
+sudo openssl req -sha256 -new -x509 -days 1826 -key service.key -out service.crt
+```
+
+`Common Name` 必须和你的域名一致。
+
+## 3. 配置 apache
+
+打开 httpd.conf，移除注释：
+
+```
+LoadModule ssl_module libexec/apache2/mod_ssl.so
+...
+Include /private/etc/apache2/extra/httpd-vhosts.conf
+```
+
+## 4. 修改 httpd-vhosts.conf 文件
+
+修改 `DocumentRoot "/Users/xxx/website/upload"` 为自己网站路径，指定证书和密钥文件路径
+
+```
+SSLCertificateFile "/private/etc/apache2/service.crt"
+SSLCertificateKeyFile "/private/etc/apache2/service.key"
+```
+
+## 5. 重启 apache
+
+用 `sudo apachectl configtest` 检测配置文件是否有误。然后用 `sudo apachectl restart` 重启服务器。
+
+## Reference
+- [apache服务器开启 https 访问_百度经验](http://jingyan.baidu.com/article/9113f81b1e91fc2b3214c706.html)
