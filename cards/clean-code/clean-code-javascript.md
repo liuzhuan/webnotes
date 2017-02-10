@@ -78,6 +78,37 @@ function createMenu(config) {
 }
 ```
 
+### Don't use flags as function parameters
+### Avoid Side Effects
+
+```js
+const addItemToCart = (cart, item) => {
+    return [...cart, {item, date:Date.now() }];
+};
+```
+
+### Don't write to global functions
+
+```js
+class SuperArray extends Array {
+    diff(comparisonArray) {
+        const hash = new Set(comparisonArray);
+        return this.filter(elem => !hash.has(elem));
+    }
+}
+```
+
+> What is Set? How to use it?
+
+### Favor functional programming over imperative programming
+### Encapsulate conditionals
+### Avoid negative conditionals
+### Avoid conditionals --- Use polymorphism
+### Avoid type-checking
+### Don't over-optimize
+### Remove dead code
+
+## Objects and Data Structures
 
 ## Reference 
 - [Clean Code JavaScript](https://github.com/ryanmcdermott/clean-code-javascript)
