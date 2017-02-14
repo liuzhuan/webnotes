@@ -105,7 +105,25 @@ wx.checkSession({
 })
 ```
 
+## wx.getUserInfo(OBJECT)
+
+获取用户信息，需要先调用 `wx.login` 接口
+
+OBJECT 参数说明：
+
+success, fail, complete 三个回调函数
+
+**success 返回参数说明**
+
+参数 | 类型 | 说明
+---- | ---- | ----
+userInfo | OBJECT | 用户信息对象，不包括 openid 等敏感信息
+rawData | String | 不包括敏感信息的原始数据字符串，用于计算签名
+signature | String | 使用 sha1(rawData + sessionkey) 得到字符串，用于校验用户信息
+encryptedData | String | 包括敏感数据在内的完整用户信息的加密数据
+iv | String | 加密算法的初始向量
 
 ## Reference 
 - [wx.login - 小程序](https://mp.weixin.qq.com/debug/wxadoc/dev/api/api-login.html)
 - [用户数据的签名验证和加解密](https://mp.weixin.qq.com/debug/wxadoc/dev/api/signature.html)
+- [用户信息·小程序](https://mp.weixin.qq.com/debug/wxadoc/dev/api/open.html)
