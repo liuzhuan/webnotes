@@ -30,14 +30,14 @@ The `src` subdirectory typically contains multiple version control repositories 
 
 Note that this must not be the same path as your Go installation.
 
-```
+```sh
 mkdir $HOME/workshop
 export GOPATH=$HOME/workshop
 ```
 
 For convenience, add the workspace's bin subdirectory to your PATH:
 
-```
+```sh
 export PATH=$PATH:$GOPATH/bin
 ```
 

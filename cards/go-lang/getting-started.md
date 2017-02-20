@@ -10,7 +10,7 @@ The package should put the `/usr/local/go/bin` directory in your PATH environmen
 
 Create a directory to contain your workspace, $HOME/work for example, and set the GOPATH environment variable to point to that location.
 
-```
+```sh
 $ export GOPATH=$HOME/work
 ```
 
@@ -30,13 +30,13 @@ func main() {
 
 Then compile it with the go tool:
 
-```
+```sh
 $ go install github.com/usr/hello
 ```
 
 The command above will put an executable command named hello inside the bin directory of your workspace. Execute the command to see the greeting:
 
-```
+```sh
 $ $GOPATH/bin/hello
 hello, world
 ```
