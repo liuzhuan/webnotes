@@ -1,0 +1,10 @@
+#! /bin/bash
+
+str1='hello'
+str2='hello'
+if test $str1 = $str2
+then
+    echo 'Two str equals'
+else
+    echo 'Two str not equals'
+fi
