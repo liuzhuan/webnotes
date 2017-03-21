@@ -3,8 +3,6 @@ title: Plupload Tutorial
 date: 2017-03-21
 ---
 
-# Plupload Tutorial
-
 * [Plupload: Multi-runtime File-Uploader](http://www.plupload.com/)
 * [Plupload Documentation](http://www.plupload.com/docs/)
 * [Plupload docs v2](http://www.plupload.com/docs/v2/Getting-Started)
