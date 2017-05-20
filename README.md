@@ -11,4 +11,10 @@
 
 ## 图书馆
 
+首都图书馆开放时间：周一至周日 9:00-19:30
+
 * [北京市公共图书馆计算机服务信息网](http://www.bplisn.net.cn/user/auth/login.html)
+
+## 编程工具
+
+* [如何在 macOS 中设置 VSCode 快捷命令？](./cards/vscode/vscode-alias.md)
