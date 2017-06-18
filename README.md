@@ -18,3 +18,4 @@
 ## 编程工具
 
 * [如何在 macOS 中设置 VSCode 快捷命令？](./cards/vscode/vscode-alias.md)
+* [如何配置 macOS 的开发环境？](./cards/mac/dev-env-setup.md)
