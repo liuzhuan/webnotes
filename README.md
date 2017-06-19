@@ -19,3 +19,4 @@
 
 * [如何在 macOS 中设置 VSCode 快捷命令？](./cards/vscode/vscode-alias.md)
 * [如何配置 macOS 的开发环境？](./cards/mac/dev-env-setup.md)
+* [如何查询苹果硬件的保修服务和支持期限？](https://checkcoverage.apple.com/cn/zh)
