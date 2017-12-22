@@ -3,8 +3,11 @@
 ## 常用开发工具
 
 - [JavaScript 代码美化工具](http://jsbeautifier.org/)
-- [Regulex - 正则表达式可视化工具](https://jex.im/regulex)
 - [Autoprefixer CSS online 自动补全 CSS 前缀](https://autoprefixer.github.io/)
+
+### 正则表达式
+- [Regulex - 正则表达式可视化工具](https://jex.im/regulex)
+- [RegExr - 练习正则表达式](https://regexr.com/)
 
 ## 前端博客
 
