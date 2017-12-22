@@ -1,0 +1,16 @@
+{
+  "name": "thxgiving",
+  "version": "1.0.0",
+  "description": "暖暖冬日，感恩有你 - 腾讯公益2017感恩节策划",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "anywhere -h ssl.gongyi.qq.com"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "anywhere": "^1.4.0"
+  }
+}
