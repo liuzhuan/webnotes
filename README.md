@@ -1,5 +1,15 @@
 # 信息集散地
 
+## 常用开发工具
+
+- [JavaScript 代码美化工具](http://jsbeautifier.org/)
+- [Regulex - 正则表达式可视化工具](https://jex.im/regulex)
+- [Autoprefixer CSS online 自动补全 CSS 前缀](https://autoprefixer.github.io/)
+
+## H5 搜集
+
+- [暖暖冬日，感恩有你 - 腾讯公益](./show-me-the-code/tencent/gongyi/thxgiving/README.md)
+
 ## 北京社保
 
 * [城镇职工用户登录](http://www.bjrbj.gov.cn/csibiz/indinfo/login.jsp)
