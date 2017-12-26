@@ -4,7 +4,9 @@
 
 ## 技术点
 
-前端截图
+前端截图。
+
+前端截图涉及到跨域读取图片，即 `http://ssl.gongyi.qq.com` 的 javascript 代码需要操作 `http://mat1.gtimg.com/` 的图片。为了实现跨域请求，图片服务器上做了设置，会返回 `Access-Control-Allow-Origin:http://ssl.gongyi.qq.com`
 
 ## 运行方式
 
