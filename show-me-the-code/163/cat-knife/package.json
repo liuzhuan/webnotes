@@ -1,0 +1,15 @@
+{
+  "name": "cat-knife",
+  "version": "1.0.0",
+  "description": "[在线地址][online]",
+  "main": "index.js",
+  "scripts": {
+    "start": "anywhere"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "anywhere": "^1.5.0"
+  }
+}
