@@ -35,7 +35,7 @@
         <div class="w100 abso foot-share"><img src="assets/icon_ui/foot_logo.jpg?20" class='share_logo'></div>
     </div>
     <div class="w100 abso foot-wrap" >
-        <p class="abso icon_logo" style="display: none"><span></span>�����ƿ�����������������빤λ</p>
+        <p class="abso icon_logo" style="display: none"><span></span>网易云课堂生在生成你的理想工位</p>
         <p class="abso finish-btn"></p>
         <div class="w100 tabs-wrap">
             <p class="type type-1 curr" data-url="icon_desk"><img src="assets/icon_ui/icon_hand2.png" class="abso hand_tishi"></p>
@@ -56,7 +56,7 @@
                     </ul>
                 </div>
             </div>
-            <!--�칫 icon_computer-->
+            <!-- icon_computer-->
             <div id="wrapper2" class="w100 z10 scroll-wrap" >
                 <div class="scroller">
                     <ul class="clearfix">
@@ -78,7 +78,7 @@
                     </ul>
                 </div>
             </div>
-            <!--�ճ������� icon_live-->
+            <!-- icon_live-->
             <div id="wrapper6" class="w100 z10 scroll-wrap" >
                 <div class="scroller">
                     <ul class="clearfix">
@@ -101,7 +101,7 @@
                     </ul>
                 </div>
             </div>
-            <!--��� icon_official-->
+            <!-- icon_official-->
             <div id="wrapper3" class="w100 z10 scroll-wrap" >
                 <div class="scroller">
                     <ul class="clearfix">
@@ -125,7 +125,7 @@
                     </ul>
                 </div>
             </div>
-            <!--���� icon_dog-->
+            <!-- icon_dog-->
             <div id="wrapper5" class="w100 z10 scroll-wrap" >
                 <div class="scroller">
                     <ul class="clearfix">
@@ -146,7 +146,7 @@
                     </ul>
                 </div>
             </div>
-            <!--��ֽ icon_paper-->
+            <!-- icon_paper-->
             <div id="wrapper4" class="w100 z10 scroll-wrap" >
                 <div class="scroller">
                     <ul class="clearfix">
@@ -178,7 +178,7 @@
     <div class="w100 h100 flex-wrap">
         <p class="back-btn bounceIn"></p>
         <p class="link-btn bounceIn"></p>
-        <span class="w100 abso">������ͼ���ɱ���ͼƬ����</span>
+        <span class="w100 abso">长按上图即可保存图片分享</span>
     </div>
 </div>
 <script src="js/zepto.min.js" type="text/javascript"></script>
@@ -194,10 +194,9 @@
 			}
 		} else {
 			
-		}  
-		
+		}
 	});
-    
+
 	function getCookie(name)
 	{
 	var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
@@ -257,9 +256,7 @@
 
         });
         wx.ready(function() {
-            //alert("�ɹ�");
             share_data();
-
         });
     })
 
@@ -273,7 +270,7 @@
             },
             cancel: function() {}
         });
-        //���������
+        
         wx.onMenuShareAppMessage({
             title: window.shareData.tTitle,
             desc: window.shareData.tContent,
